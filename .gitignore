@@ -4,3 +4,4 @@
 *.pyc
 *__pycache__
 eventex/__pycache__
+.vscode
