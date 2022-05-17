@@ -14,7 +14,7 @@ def subscribe(request):
     else:
         return new(request)
 
-def create (request):
+def create(request):
     form = SubscriptionForm(request.POST)
 
     if not form.is_valid():
