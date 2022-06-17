@@ -6,3 +6,4 @@
 eventex/__pycache__
 .vscode
 staticfiles
+.ipynb_checkpoints/
