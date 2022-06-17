@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.core import mail
 
+from eventex.settings import DEFAULT_FROM_EMAIL
+
 
 class SubscribePostValid(TestCase):
 
@@ -19,11 +21,11 @@ class SubscribePostValid(TestCase):
         self.assertEqual(expected, self.email.subject)
 
     def test_subscription_email_from(self):
-        expected = 'contato@eventex.com.br'
+        expected = DEFAULT_FROM_EMAIL
         self.assertEqual(expected, self.email.from_email)
 
     def test_subscription_email_to(self):
-        expected = ['contato@eventex.com.br', 'teste@teste.com.br']
+        expected = [DEFAULT_FROM_EMAIL, 'teste@teste.com.br']
         self.assertEqual(expected, self.email.to)
 
     def test_subscription_email_body(self):
