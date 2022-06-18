@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', eventex.core.views.home),
     path('inscricao/', subscribe),
-    path('inscricao/<int:pk>/', detail)
+    path('inscricao/<int:pk>/', detail) #TODO: Usar hash para não expor ID incremental
 ]
