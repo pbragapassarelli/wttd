@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 
 class Subscription(models.Model):
@@ -6,6 +7,7 @@ class Subscription(models.Model):
     email = models.EmailField('e-mail')
     phone = models.CharField('telefone', max_length=20)
     created_at = models.DateTimeField('data de criação', auto_now_add=True)
+    paid = models.BooleanField('pago', default=False)
 
     class Meta:
         verbose_name_plural = 'inscrições'
