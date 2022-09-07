@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from eventex.core.models import Contact, Speaker
+from eventex.core.models import Contact, Speaker, Talk
 
 
 class ContactInLine(admin.TabularInline):
     model = Contact
     extra = 1
+
 
 class SpeakerModelAdmin(admin.ModelAdmin):
     inlines = [ContactInLine]
@@ -24,3 +25,4 @@ class SpeakerModelAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Speaker, SpeakerModelAdmin)
+admin.site.register(Talk)
